@@ -23,9 +23,9 @@ import about02 from "../assets/about02.png";
 import about03 from "../assets/about03.png";
 import about04 from "../assets/about04.png";
 
-import profile from "../assets/profile.png";
+import profile from "../assets/gutz_assets/logo-photo.png";
 import circle from "../assets/circle.svg";
-import logo from "../assets/code_clod.png";
+import logo from "../assets/gutz-logo.png";
 
 import adidas from "../assets/adidas.png";
 import amazon from "../assets/amazon.png";
@@ -35,7 +35,16 @@ import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 
+import strength from "../assets/strength.png";
+import weakness from "../assets/weakness.png";
+import opportunity from "../assets/opportunity.png";
+import threat from "../assets/threat.png";
+
 export default {
+  threat,
+  opportunity,
+  weakness,
+  strength,
   email,
   mobile,
   api,

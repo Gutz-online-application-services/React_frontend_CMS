@@ -28,7 +28,7 @@ function Skills() {
 
   return (
     <>
-      <h2 className="head-text">Skills & Experience</h2>
+      <h2 className="head-text">Services & Open Roles</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {skills?.map((skill) => (
@@ -90,6 +90,6 @@ function Skills() {
 
 export default AppWrap(
   MotionWrap(Skills, "app__skills"),
-  "skills",
+  "services",
   "app__whitebg",
 );

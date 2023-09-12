@@ -46,14 +46,14 @@ function Footer() {
       <div className="app__footer-cards">
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
-          <a href="mailto:joshuajonelle.espocia@gmail.com" className="p-text">
-            joshuajonellegarbin.espocia@gmail.com
+          <a href="mailto:gutz-email@gmail.com" className="p-text">
+            gutz-email@gmail.com
           </a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
-          <a href="tel: +63 963 2254 837" className="p-text">
-            09632254837
+          <a href="" className="p-text">
+            0912345567
           </a>
         </div>
       </div>

@@ -8,7 +8,7 @@ import "./Testimonials.scss";
 function Testimonials() {
   const [brands, setBrand] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleClick = (index) => {
     setCurrentIndex(index);

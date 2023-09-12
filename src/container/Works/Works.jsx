@@ -41,22 +41,27 @@ function Works() {
   return (
     <>
       <h2 className="head-text">
-        My Creative <span>Portfolio</span> Section
+        Build your <span>Career</span> with us
       </h2>
 
       <div className="app__work-filter">
-        {["UI/UX", "Web App", "CLI", "Tools", "React JS", "All"].map(
-          (item, index) => (
-            <div
-              className={`app__work-filter-item app__flex p-text ${activeFilter === item ? "item-active" : ""
-                }`}
-              key={index}
-              onClick={() => handelWorkFiler(item)}
-            >
-              {item}
-            </div>
-          ),
-        )}
+        {[
+          "General Operations",
+          "Creatives",
+          "IT/Production",
+          "Language",
+          "All",
+        ].map((item, index) => (
+          <div
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
+            key={index}
+            onClick={() => handelWorkFiler(item)}
+          >
+            {item}
+          </div>
+        ))}
       </div>
 
       <motion.div
@@ -121,6 +126,6 @@ function Works() {
 
 export default AppWrap(
   MotionWrap(Works, "app__works"),
-  "work",
+  "career",
   "app__primarybg",
 );

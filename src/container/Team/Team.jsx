@@ -2,16 +2,16 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./About.scss";
+import "./Team.scss";
 
 import { urlFor, client } from "../../client";
 
-function About() {
-  const [abouts, setAbout] = useState([]);
+function Team() {
+  const [teams, setAbout] = useState([]);
 
   useEffect(() => {
     async function getPosts() {
-      const getAbouts = await client.fetch('*[_type == "abouts"]');
+      const getAbouts = await client.fetch('*[_type == "team"]');
       setAbout(getAbouts);
     }
 
@@ -21,24 +21,25 @@ function About() {
   return (
     <>
       <h2 className="head-text">
-        Turning <span>Coffee</span> into <span>Code</span> one at time.
+        Meet our <span>Devoted</span> team <span>Changing</span> the{" "}
+        <span>World</span>.
       </h2>
 
       <div className="app__profiles">
-        {abouts.map((about, index) => (
+        {teams.map((member, index) => (
           <motion.div
-            key={about.title + index}
+            key={member.name + index}
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="app__profile-item"
           >
-            <img src={urlFor(about.imgUrl)} alt={about.title} />
+            <img src={urlFor(member.imgUrl)} alt={member.name} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
-              {about.title}
+              {member.name}
             </h2>
             <p className="p-text" style={{ marginTop: 10 }}>
-              {about.description}
+              {member.position}
             </p>
           </motion.div>
         ))}
@@ -47,8 +48,4 @@ function About() {
   );
 }
 
-export default AppWrap(
-  MotionWrap(About, "app__about"),
-  "about",
-  "app__whitebg",
-);
+export default AppWrap(MotionWrap(Team, "app__about"), "team", "app__whitebg");
