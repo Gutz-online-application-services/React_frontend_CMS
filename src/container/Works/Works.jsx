@@ -53,8 +53,9 @@ function Works() {
           "All",
         ].map((item, index) => (
           <div
-            className={`app__work-filter-item app__flex p-text ${activeFilter === item ? "item-active" : ""
-              }`}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
             key={index}
             onClick={() => handelWorkFiler(item)}
           >
@@ -71,7 +72,7 @@ function Works() {
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              {console.log(work)}
+              {console.log(work.imgUrl)}
               {/* <img src={urlFor(work.imgUrl)} alt={work.name} /> */}
               <motion.div
                 className="app__work-hover app__flex"

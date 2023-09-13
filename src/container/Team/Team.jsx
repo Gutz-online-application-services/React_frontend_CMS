@@ -25,6 +25,8 @@ function Team() {
         <span>World</span>.
       </h2>
 
+      {console.log(teams.name)}
+
       <div className="app__profiles">
         {teams.map((member, index) => (
           <motion.div
