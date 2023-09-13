@@ -34,7 +34,6 @@ function Testimonials() {
     <>
       {testimonials.length && (
         <>
-          {console.log(testimonials[currentIndex])}
           <div className="app__testimonial-item app__flex">
             <img src={urlFor(test.imageUrl)} alt="testimonial" />
             <div className="app__testimonial-content">

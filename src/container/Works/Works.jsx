@@ -72,8 +72,10 @@ function Works() {
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              {console.log(work.imgUrl)}
-              {/* <img src={urlFor(work.imgUrl)} alt={work.name} /> */}
+              {console.log(work)}
+              {work.imgUrl ? (
+                <img src={urlFor(work.imgUrl)} alt={work.name} />
+              ) : null}
               <motion.div
                 className="app__work-hover app__flex"
                 whileHover={{ opacity: [0, 1] }}
