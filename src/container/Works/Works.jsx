@@ -71,7 +71,6 @@ function Works() {
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              {console.log(work)}
               {work.imgUrl ? (
                 <img src={urlFor(work.imgUrl)} alt={work.name} />
               ) : null}
@@ -104,7 +103,9 @@ function Works() {
                   rel="noreferrer"
                 >
                   {console.log(work.codeLink)}
+                  {console.log("hello")}
                   {console.log(work.name)}
+                  {console.log(work)}
                   <motion.div
                     className="app__flex"
                     whileInView={{ scale: [0, 1] }}
