@@ -104,7 +104,7 @@ function Works() {
                 >
                   {console.log(work.codeLink)}
                   {console.log("hello")}
-                  {console.log(work.name)}
+                  {console.log(work.title)}
                   {console.log(work)}
                   <motion.div
                     className="app__flex"
