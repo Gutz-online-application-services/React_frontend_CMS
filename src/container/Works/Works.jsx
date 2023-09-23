@@ -97,7 +97,7 @@ function Works() {
                 </a>
                 <a
                   href={`${work.codeLink}?stringValue=${encodeURIComponent(
-                    work.name,
+                    work.title,
                   )}`}
                   target="_blank"
                   rel="noreferrer"
@@ -105,7 +105,6 @@ function Works() {
                   {console.log(work.codeLink)}
                   {console.log("hello")}
                   {console.log(work.title)}
-                  {console.log(work)}
                   <motion.div
                     className="app__flex"
                     whileInView={{ scale: [0, 1] }}
