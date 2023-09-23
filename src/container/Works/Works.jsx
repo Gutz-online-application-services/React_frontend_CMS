@@ -53,9 +53,8 @@ function Works() {
           "All",
         ].map((item, index) => (
           <div
-            className={`app__work-filter-item app__flex p-text ${
-              activeFilter === item ? "item-active" : ""
-            }`}
+            className={`app__work-filter-item app__flex p-text ${activeFilter === item ? "item-active" : ""
+              }`}
             key={index}
             onClick={() => handelWorkFiler(item)}
           >
@@ -97,7 +96,13 @@ function Works() {
                     <AiFillEye />
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target="_blank" rel="noreferrer">
+                <a
+                  href={`${work.projectLink}?stringValue=${encodeURIComponent(
+                    work.name,
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <motion.div
                     className="app__flex"
                     whileInView={{ scale: [0, 1] }}
