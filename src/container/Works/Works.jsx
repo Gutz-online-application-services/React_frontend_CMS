@@ -53,8 +53,9 @@ function Works() {
           "All",
         ].map((item, index) => (
           <div
-            className={`app__work-filter-item app__flex p-text ${activeFilter === item ? "item-active" : ""
-              }`}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
             key={index}
             onClick={() => handelWorkFiler(item)}
           >
@@ -97,7 +98,7 @@ function Works() {
                   </motion.div>
                 </a>
                 <a
-                  href={`${work.projectLink}?stringValue=${encodeURIComponent(
+                  href={`${work.codeLink}?stringValue=${encodeURIComponent(
                     work.name,
                   )}`}
                   target="_blank"
