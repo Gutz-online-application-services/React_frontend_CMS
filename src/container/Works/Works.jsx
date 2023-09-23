@@ -104,7 +104,7 @@ function Works() {
                   rel="noreferrer"
                 >
                   {console.log(work.codeLink)}
-                  {console.log(work.workname)}
+                  {console.log(work.name)}
                   <motion.div
                     className="app__flex"
                     whileInView={{ scale: [0, 1] }}
