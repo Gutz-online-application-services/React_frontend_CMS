@@ -41,7 +41,7 @@ function Footer() {
   }
   return (
     <>
-      <h2>Need a Developer? Buy me coffee and let's chat.</h2>
+      <h2>Get in-touch with GUTZ</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
