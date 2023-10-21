@@ -47,13 +47,13 @@ function Footer() {
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
           <a href="mailto:gutz-email@gmail.com" className="p-text">
-            gutz-email@gmail.com
+            official@onlinegutz.com
           </a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
           <a href="" className="p-text">
-            0912345567
+            +63 915-032-3375
           </a>
         </div>
       </div>
