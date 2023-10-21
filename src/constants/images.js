@@ -25,7 +25,7 @@ import about04 from "../assets/about04.png";
 
 import profile from "../assets/gutz_assets/logo-photo.png";
 import circle from "../assets/circle.svg";
-import logo from "../assets/gutz-logo.png";
+import logo from "../assets/ne_gutz_logo.png";
 
 import adidas from "../assets/adidas.png";
 import amazon from "../assets/amazon.png";

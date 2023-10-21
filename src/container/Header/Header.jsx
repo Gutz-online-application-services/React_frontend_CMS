@@ -1,64 +1,29 @@
 import "./Header.scss";
 import { AppWrap } from "../../wrapper";
-import { motion } from "framer-motion";
+import Scene from "./../../assets/header-assets/27.png";
+import item1 from "./../../assets/header-assets/30.png";
+import item2 from "./../../assets/header-assets/31.png";
+import item3 from "./../../assets/header-assets/35.png";
 
-import { images } from "../../constants";
-
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    },
-  },
-};
 function Header() {
   return (
     <div id="home" className="app__header app__flex">
-      <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className="app__header-info"
-      >
-        <div className="app__header-badge">
-          <div className="badge-cmp app__flex"></div>
-          <div className="tag-cmp app__flex"></div>
+      <div className="app__header-container">
+        <div className="container-right">
+          <img className="scene" src={Scene} alt="" />
+          <img src={item1} className="item one" alt="" />
+          <img src={item2} className="item two" alt="" />
+          <img src={item3} className="item three" alt="" />
         </div>
-      </motion.div>
-
-      <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="app__header-img"
-      >
-        <img src={images.logo} alt="profile_bg" />
-        <motion.img
-          whileInView={{ scale: [0, 1] }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          src={images.circle}
-          alt="profile_circle"
-          className="overlay_circle"
-        />
-      </motion.div>
-
-      <motion.div
-        variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className="app__header-circles"
-      >
-        {[
-          images.strength,
-          images.weakness,
-          images.opportunity,
-          images.threat,
-        ].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <img src={circle} alt="circle" />
-          </div>
-        ))}
-      </motion.div>
+        <div className="container-left">
+          <h2>It Takes guts to be gutz</h2>
+          <p className="p-text">
+            GUTZ Online Communication Services, founded in 2018 in the
+            Philippines, delivers top-tier BPO solutions worldwide, led by CEO
+            Regine Mae E. Gutierrez and COO Katherine J. Agripa.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

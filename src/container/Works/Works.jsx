@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -53,8 +53,9 @@ function Works() {
           "All",
         ].map((item, index) => (
           <div
-            className={`app__work-filter-item app__flex p-text ${activeFilter === item ? "item-active" : ""
-              }`}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
             key={index}
             onClick={() => handelWorkFiler(item)}
           >
@@ -83,18 +84,6 @@ function Works() {
                   staggerChildren: 0.5,
                 }}
               >
-                <a href={work.projectLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    className="app__flex"
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{
-                      duration: 0.25,
-                    }}
-                  >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
                 <a
                   href={`${work.codeLink}?stringValue=${encodeURIComponent(
                     work.title,
@@ -102,9 +91,6 @@ function Works() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {console.log(work.codeLink)}
-                  {console.log("hello")}
-                  {console.log(work.title)}
                   <motion.div
                     className="app__flex"
                     whileInView={{ scale: [0, 1] }}
@@ -113,7 +99,7 @@ function Works() {
                       duration: 0.25,
                     }}
                   >
-                    <AiFillGithub />
+                    <AiOutlineLink />
                   </motion.div>
                 </a>
               </motion.div>
