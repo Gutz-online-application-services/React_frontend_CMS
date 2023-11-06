@@ -1,13 +1,41 @@
 import { useState, useEffect } from "react";
-import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+import { AiFillInfoCircle, AiOutlineLink } from "react-icons/ai";
 import { motion } from "framer-motion";
-
 import { AppWrap, MotionWrap } from "../../wrapper";
-
 import { urlFor, client } from "../../client";
+
+import BookkeeperModal from "../../components/static_pages/BookkeeperModal";
+import WebDeveloperModal from "../../components/static_pages/WebDeveloperModal";
+import GraphicDesignerModal from "../../components/static_pages/GraphicDesignerModal";
+import CopywriterModal from "../../components/static_pages/CopywriterModal";
+import TechSupportModal from "../../components/static_pages/TechSupportModal";
+import TelemarketerModal from "../../components/static_pages/TelemarketerModal";
+import VirtualAssistantModal from "../../components/static_pages/VirtualAssistant";
+import ESLTutorModal from "../../components/static_pages/ESLTutorModal";
+
 import "./Works.scss";
 
 function Works() {
+  const [toggle, setToggle] = useState(false);
+  const [targetModal, setTargetModal] = useState(null);
+
+  const descriptions = {
+    "Book keeper": <BookkeeperModal toggle={setToggle} />,
+    "Web Developer": <WebDeveloperModal toggle={setToggle} />,
+    "Graphic Designer": <GraphicDesignerModal toggle={setToggle} />,
+    Copywriter: <CopywriterModal toggle={setToggle} />,
+    "IT/Tech Support": <TechSupportModal toggle={setToggle} />,
+    Telemarketer: <TelemarketerModal toggle={setToggle} />,
+    "Virtual Assistant": <VirtualAssistantModal toggle={setToggle} />,
+    "ESL Tutor": <ESLTutorModal toggle={setToggle} />,
+  };
+
+  const toggleModal = (targetDescrition) => {
+    setToggle(true);
+    setTargetModal(descriptions[targetDescrition]);
+    console.log(targetDescrition);
+  };
+
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
@@ -40,6 +68,15 @@ function Works() {
   };
   return (
     <>
+      {toggle && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          {targetModal}
+        </motion.div>
+      )}
       <h2 className="head-text">
         Build your <span>Career</span> with us
       </h2>
@@ -53,9 +90,8 @@ function Works() {
           "All",
         ].map((item, index) => (
           <div
-            className={`app__work-filter-item app__flex p-text ${
-              activeFilter === item ? "item-active" : ""
-            }`}
+            className={`app__work-filter-item app__flex p-text ${activeFilter === item ? "item-active" : ""
+              }`}
             key={index}
             onClick={() => handelWorkFiler(item)}
           >
@@ -75,6 +111,14 @@ function Works() {
               {work.imgUrl ? (
                 <img src={urlFor(work.imgUrl)} alt={work.name} />
               ) : null}
+
+              <div
+                className="app__work-info"
+                onClick={() => toggleModal(work.title)}
+              >
+                <AiFillInfoCircle />
+              </div>
+
               <motion.div
                 className="app__work-hover app__flex"
                 whileHover={{ opacity: [0, 1] }}
